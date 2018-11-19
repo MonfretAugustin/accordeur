@@ -5,9 +5,9 @@ Mise en place d'un assistant accordeur vocal
 Plan du projet: Accordeur
 But --> Accorder une guitare à partir du kit AI vocal
 - Comment repérer une note à partir d'un son
-    * Reperer la fréquence fondamental d'un son
+    * Reperer la fréquence fondamental d'un son /
     * Donner la note
-    * Utiliser la bibliothèque librosa et wave
+    * Utiliser la bibliothèque (librosa) et wave /
     * Seuil de déclenchement de l'enregistrement et de sortie
     * Savoir si on est loin de la note voulu ou non
     * Detecter si la note est trop haute ou basse, puis jouer en continue jusqu'à l'obtention de la note
