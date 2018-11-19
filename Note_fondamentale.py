@@ -2,10 +2,9 @@ import argparse
 import time
 import threading
 import math
-import numpy as np
 from matplotlib.pyplot import *
 import scipy.io.wavfile as wave
-from np.fft import fft
+from numpy.fft import fft
 from itertools import chain
 import argparse
 
@@ -34,15 +33,15 @@ def main():
         def Tracer_spectre(debut,duree,data,rate):
             start = int(0*rate)
             stop = int((0+1)*rate)
-            spectre = np.absolute(fft(data[start:stop]))       #Réalise le spectre
+            spectre = math.abs(fft(data[start:stop]))       #Réalise le spectre
             spectre = spectre/spectre.max()                    #Normalise le spectre par rapport à la fondamentale
             spectre2 = list(chain(spectre))                    #Transforme l'array en liste
             maxi = spectre2.index(max(spectre))                #Trouve l'indice de la fréquence max (fondamentale)
 
             n = spectre.size
-            freq = np.zeros(n)
+            freq = []
             for k in range(n):
-                freq[k] = 1.0/n*rate*k
+                freq.append(1.0/n*rate*k)
             vlines(freq,[0],spectre,'r')
             print("La fréquence fondamentale de ce son est : {} Hz".format(freq[maxi]))
             
