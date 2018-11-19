@@ -1,4 +1,4 @@
-# Accordeur_disruptif
+﻿# Accordeur_disruptif
 
 Mise en place d'un assistant accordeur vocal 
 
@@ -29,3 +29,4 @@ But --> Déterminer les accords dans une musique
 
 Documentation :
 
+membre:alexandre Ducros
