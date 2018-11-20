@@ -1,4 +1,4 @@
-from Accorder_corde_guitare import *
+from Accorder_guitare import *
 
 def test_trouve_freq_souhaitee():
     assert trouve_freq_souhaitee(429.7)==(1,329.6)
