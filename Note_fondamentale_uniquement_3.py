@@ -23,7 +23,7 @@ def determine_note_fondamentale():
         board.button.when_pressed = done.set
 
         fs = 60000
-        duration = 4 # seconds
+        duration = 2 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
         print("done recording")
