@@ -51,7 +51,7 @@ def reponse_bouton(frequence):
             else :
                 leds.update(Leds.rgb_pattern(Color.RED))        #Clignotement rouge pour diminuer pendant 5 secondes
                 time.sleep(5)
-
+        print(ecart)
         return ecart
 
 def accord_de_la_corde () :
