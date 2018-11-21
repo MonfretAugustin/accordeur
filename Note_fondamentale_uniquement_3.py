@@ -26,6 +26,7 @@ def determine_note_fondamentale():
         duration = 3 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
+	myrecording2 = list(chain(*myrecording))
         
 
         """def readwave(filename):
@@ -46,7 +47,7 @@ def determine_note_fondamentale():
             return (data,framerate)
 
         recording_name = '../AIY-projects-python/src/examples/voice/recording.wav'"""
-        data = myrecording
+        data = myrecording2
 
         rate = fs
 
