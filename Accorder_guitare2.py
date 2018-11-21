@@ -60,7 +60,7 @@ def accord_de_la_corde () :
 
 
 def test_justesse(frequence_fondamentale):
-        f_reference=trouve_freq_souhaitee(frequence_fondamentale)
+        f_reference=trouve_freq_souhaitee(frequence_fondamentale)[1]
         (ecart,action) = ecart_avec_objectif(frequence_fondamentale)
         rapport=(f_reference+ecart)/f_reference
         return (rapport<10**0.05-1)
