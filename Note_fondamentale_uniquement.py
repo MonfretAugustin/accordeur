@@ -2,7 +2,6 @@ import argparse
 import time
 import threading
 import math
-from matplotlib.pyplot import *
 import scipy.io.wavfile as wave
 from numpy.fft import fft
 from itertools import chain
