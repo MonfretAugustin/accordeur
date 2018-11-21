@@ -6,6 +6,7 @@ import math
 from numpy.fft import fft
 import argparse
 import sounddevice
+from itertools import chain
 
 from aiy.board import Board
 from aiy.voice.audio import AudioFormat, play_wav, record_file, Recorder
