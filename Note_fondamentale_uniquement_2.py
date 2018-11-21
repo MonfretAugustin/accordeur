@@ -48,9 +48,9 @@ def determine_note_fondamentale():
 	            data = struct.unpack('%sh' % (nframes * nchannels), frames)
             return (data,framerate)
 
-        data = list(readwave("recording.wav")[0])
+        data = list(readwave(args.filename)[0])
 
-        rate = readwave("recording.wav")[1]
+        rate = readwave(args.filename)[1]
 
 
         start = int(0*rate)

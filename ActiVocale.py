@@ -41,9 +41,10 @@ def main():
             logging.info('You said: "%s"' % text)
             text = text.lower()
 
-            if 'Accorde ma guitare' is in text :
-                print("ok")'''accord_de_la_guitare()'''
-            elif 'A plus' is in text:
+            if 'Accorde ma guitare' in text :
+                print("bonjour")
+            #accord_de_la_guitare()
+            elif 'A plus' in text:
                 break
 
 
