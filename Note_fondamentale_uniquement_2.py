@@ -8,6 +8,7 @@ import math
 from numpy.fft import fft
 from itertools import chain
 import argparse
+import os
 
 from aiy.board import Board
 from aiy.voice.audio import AudioFormat, play_wav, record_file, Recorder
@@ -68,7 +69,8 @@ def determine_note_fondamentale():
             freq.append(1.0/n*rate*k)
 
         print(freq[maxi])
-
+		os.remove('../AIY-projects-python/src/examples/voice/recording.wav')
+		
 if __name__=='__main__':
     determine_note_fondamentale()
 
