@@ -49,7 +49,7 @@ def determine_note_fondamentale():
             return (data,framerate)
 	
 	
-	 recording_name = "~/AIY-projects-python/src/examples/voice/recording.wav"
+        recording_name = "~/AIY-projects-python/src/examples/voice/recording.wav"
         data = list(readwave(recording_name)[0])
 
         rate = readwave(recording_name)[1]
