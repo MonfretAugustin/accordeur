@@ -42,7 +42,7 @@ def main():
             text = text.lower()
 
             if 'Accorde ma guitare' is in text :
-                accord_de_la_guitare()
+                print("ok")'''accord_de_la_guitare()'''
             elif 'A plus' is in text:
                 break
 

@@ -24,24 +24,22 @@ def trouve_freq_souhaitee(frequence):     # trouve la fréquence à obtenir (la 
 
 def ecart_avec_objectif(frequence):    # renvoie l'écart sous la forme (valeur de l'écart, -1 ou 1)  -1 pour diminuer, 1 pour augmenter
     objectif = trouve_freq_souhaitee(frequence)
-    ecart = (int(10*frequence) - int(10*objectif[1]))/10
+    ecart = frequence - objectif[1]
     if ecart == abs(ecart):
         action = -1
     else :
         action = 1
-    ecart = abs(ecart)
-    return (ecart,action)
+    return (abs(ecart),action)
 
-def reponse_bouton(frequence):
-    (ecart,action) = ecart_avec_objectif(frequence)
+def reponse_bouton(est_juste,ecart,action):
     with Leds() as leds :
-        if ecart == 0.0 :
+        if est_juste :
             leds.update(Leds.rgb_on(Color.GREEN))           # Vert fixe pendant 3 secondes si fréquence atteinte
             time.sleep(3)
             print ('Corde accordée')
             tts.say('Corde accordée',lang='fr-FR')          ####### Dire la phrase en plus #######
         else :
-            period = ecart*10
+            period = 150/(25*ecart)
             leds.pattern=Pattern.blink(period)          # donne fréquence de pulsation
             print('Tourner la cheville')
             tts.say('Tourner la cheville', lang='fr-FR')       ####### Dire la phrase #######
@@ -52,15 +50,21 @@ def reponse_bouton(frequence):
                 leds.update(Leds.rgb_pattern(Color.RED))        #Clignotement rouge pour diminuer pendant 5 secondes
                 time.sleep(5)
 
-        return ecart
 
 def accord_de_la_corde () :
-    ecart == 1.0
-    while ecart != 0.0 :
+    est_juste=False
+    while est_juste==False:
         frequence_fondamentale = Nfu.determine_note_fondamentale()
-        ecart = reponse_bouton(frequence_fondamentale)
-    fin = reponse_bouton(frequence_fondamentale)
+        est_juste=test_justesse(frequence_fondamentale)
+        reponse_bouton(est_juste,ecart,action)
 
+
+def test_justesse(frequence_fondamentale):
+        f_reference=trouve_freq_souhaitee(frequence_fondamentale)
+        (ecart,action) = ecart_avec_objectif(frequence_fondamentale)
+        rapport=(f_reference+ecart)/f_reference
+        return (rapport<10**0.05-1)
+    
 def accord_de_la_guitare():
     for k in range (6):
         print ('Accorder la corde suivante')
