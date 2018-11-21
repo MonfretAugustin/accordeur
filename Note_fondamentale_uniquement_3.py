@@ -3,10 +3,7 @@ import time
 import wave,struct
 import threading
 import math
-from matplotlib.pyplot import *
-#import scipy.io.wavfile as wave
 from numpy.fft import fft
-from itertools import chain
 import argparse
 
 from aiy.board import Board
