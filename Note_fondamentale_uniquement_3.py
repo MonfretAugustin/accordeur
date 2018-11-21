@@ -26,7 +26,7 @@ def determine_note_fondamentale():
         duration = 3 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
-	myrecording2 = list(chain(*myrecording))
+        myrecording2 = list(chain(*myrecording))
         
 
         """def readwave(filename):
