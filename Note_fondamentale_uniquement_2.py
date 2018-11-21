@@ -47,10 +47,11 @@ def determine_note_fondamentale():
                 # 16 bits : signed short
 	            data = struct.unpack('%sh' % (nframes * nchannels), frames)
             return (data,framerate)
+	
+	recording_name = "~/AIY-projects-python/src/examples/voice/recording.wav"
+        data = list(readwave(recording_name)[0])
 
-        data = list(readwave(args.filename)[0])
-
-        rate = readwave(args.filename)[1]
+        rate = readwave(recording_name)[1]
 
 
         start = int(0*rate)
