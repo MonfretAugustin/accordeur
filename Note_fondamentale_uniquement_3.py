@@ -65,8 +65,8 @@ def determine_note_fondamentale():
         for k in range(n):
             freq.append(1.0/n*rate*k)
 
-        print(2*freq[maxi])
-        return(2*freq[maxi])
+        print(freq[maxi])
+        return(freq[maxi])
 
 if __name__=='__main__':
     determine_note_fondamentale()
