@@ -1,4 +1,4 @@
-import Note_fondamentale_uniquement as Nfu
+import Note_fondamentale_uniquement_3 as Nfu
 import math
 import time
 from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)

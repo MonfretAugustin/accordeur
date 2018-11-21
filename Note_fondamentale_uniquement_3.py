@@ -26,7 +26,7 @@ def determine_note_fondamentale():
         duration = 4 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
-	print("done recording")
+        print("done recording")
         myrecording2 = list(chain(*myrecording))
         
 
@@ -65,6 +65,7 @@ def determine_note_fondamentale():
         for k in range(n):
             freq.append(1.0/n*rate*k)
 
+        print(2*freq[maxi])
         return(2*freq[maxi])
 
 if __name__=='__main__':
