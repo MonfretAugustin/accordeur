@@ -55,7 +55,7 @@ def reponse_bouton(frequence):
         return ecart
 
 def accord_de_la_corde () :
-    ecart == 1.0
+    ecart = 1.0
     while ecart != 0.0 :
         frequence_fondamentale = Nfu.determine_note_fondamentale()
         ecart = reponse_bouton(frequence_fondamentale)
