@@ -7,7 +7,7 @@ from aiy.voice.audio import AudioFormat, play_wav, record_file, Recorder
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--filename', '-f', default='recording.wav')
+    parser.add_argument('--filename', '-f', default='enregistrement.wav')
     args = parser.parse_args()
 
     with Board() as board:
