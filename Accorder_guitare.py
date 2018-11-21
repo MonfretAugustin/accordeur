@@ -41,7 +41,7 @@ def reponse_bouton(frequence):
             print ('Corde accordée')
             tts.say('Corde accordée',lang='fr-FR')          ####### Dire la phrase en plus #######
         else :
-            period = 150/(25*ecart)
+            period = ecart*10
             leds.pattern=Pattern.blink(period)          # donne fréquence de pulsation
             print('Tourner la cheville')
             tts.say('Tourner la cheville', lang='fr-FR')       ####### Dire la phrase #######
