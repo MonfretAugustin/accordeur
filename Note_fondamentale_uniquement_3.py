@@ -2,6 +2,7 @@ import argparse
 import time
 import wave,struct
 import threading
+import scipy.io.wavfile as wave
 import math
 from numpy.fft import fft
 import argparse
@@ -22,7 +23,7 @@ def determine_note_fondamentale():
         board.button.when_pressed = done.set
 
         fs = 44100
-        duration = 2 # seconds
+        duration = 3 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
         wave.write("recording.wav",fs,myrecording)
