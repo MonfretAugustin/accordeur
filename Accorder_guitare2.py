@@ -55,6 +55,7 @@ def accord_de_la_corde () :
     est_juste=False
     while est_juste==False:
         frequence_fondamentale = Nfu.determine_note_fondamentale()
+        (ecart,action) = ecart_avec_objectif(frequence_fondamentale)
         est_juste=test_justesse(frequence_fondamentale)
         reponse_bouton(est_juste,ecart,action)
 
