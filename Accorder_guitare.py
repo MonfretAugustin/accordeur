@@ -1,4 +1,4 @@
-import Note_fondamentale_uniquement as Nfu
+import Note_fondamentale_uniquement_3 as Nfu
 import math
 import time
 from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
@@ -39,7 +39,7 @@ def reponse_bouton(est_juste,ecart,action):
             print ('Corde accordée')
             tts.say('Corde accordée',lang='fr-FR')          ####### Dire la phrase en plus #######
         else :
-            period = 150/(25*ecart)
+            period = 10*ecart
             leds.pattern=Pattern.blink(period)          # donne fréquence de pulsation
             print('Tourner la cheville')
             tts.say('Tourner la cheville', lang='fr-FR')       ####### Dire la phrase #######
@@ -72,3 +72,5 @@ def accord_de_la_guitare():
         accord_de_la_corde()
     print('Guitare accordée')
     tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
+if __name__=="__main__":
+    accord_de_la_corde()
