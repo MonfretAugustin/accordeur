@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "accordeur-disruptif",
+  "private_key_id": "ee679d3c5b77d660117c7402352a686385e66934",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC38BNtV7qytNd/\nnNAJ3Ur0kK+w7AHdb40g/eLfpY/AgutZxKFJHIK02otz5XUeP9eWHD660XZZeQo+\nC2wxV/5qK8eeqBKTvxcx5RVAK9tdZLFAfySXzXDvpcm54O0hbdqcEE1DF3WfYFoj\nFNU0xhlVbeGK/NLI0bnHVswGle+V47T5I48Dpsue4u9q3RvvdNR6wPWaS9C0g1T2\n4abPIBN2MmVHHYBqD3chRvnTpHk6aowHqWpVXp6d36bz9SqFKMBqLnUXHvJegJgg\nuDr7HqJi91c99PFzgpk+eF10opioTaBdQ7CeXHtLVqqpXFYtkyeMQ/DIHqekzUxZ\n9WJg5mspAgMBAAECggEAFHBykDNv9RzAV5dizL3Q7vVG+Kd5G5SiP5jGxahdnXxO\nz8ZYT8oBwjwIxAOq7IYWnEEePV86Qf3/w948Ew2eoUilIX22tsFEwBAfOObGtQ2T\n3sFiHRZApviqvmN+pjjRUodDNqHcOa4Yxg4yFO+wb/xKVEn82EDp3ntIJ7Ewktyu\n3Ro9Y3D6EzmWLVUYkO+0HFCkzdKfOf5pt7B5VnoEyECnLii1jnfANrUgwbnQlpvd\nN2RiX5Yc/kbZewFiZ9rzHQnSir6ZtIXiDGROGrreMMYyjYl3Ft+P4NnesGJiuRG1\nsdHFbCDMpy9g9EUOmTUQPpiGY1BJOxaH8K0kJpDSUwKBgQDs+gMGVSkmtDBdkzPS\nHt51xLkI0eJm9rkCGjdogiLS3+mj5+2HkXhAxLbmyDXCAC31hf7OQG5IFzediooY\nFwn6bybVerSs+wYYWttNBTkXv3vf4WIR5qDoIieSrzBHWsHc9ArnCy5VYPCVG5f3\nk5dR+rLBclwbsCwjQh6mnUAsBwKBgQDGtBcCAUfBIyouL+uXC1XzbJaAF3kSZndJ\nEX4trNscH8TY00iEyHHbLUCzYa1hzxe8g+UltLVmzjuiWVcyPCfYCC3d6rsASp9W\nMfIA9ZlMSkk9MXDOR0YYy/cZMCrvpm6cxvC3Oo1m92L34S8mk4cKd8pqBzj5jHry\nz1nXfhVDTwKBgQCd/nnxyOlswonUeYX9O1N6FTSAat6VYz0p56y1Yr4w9dRh0QmO\nbzBLjlubNjSRKWl63mFpxY9BRSlxQaKcORAQBfdQMUUwZxRDPKAlk6vi52mBdFTc\nNnVlDxBvPZnkmN/Tnml+bPfxOHZuEz2YdLBYmdqAGuzKEQT8ZOLmlsToFQKBgQCy\nAScTXr4/IRdqZPdySm9nMIHqohyOBUkbJhaZKF7pZPRdIXm3qjGFHZb2m6xNEM68\nzJN9IdPYEyyNFeftUsKG31znjp6TdkYjW37mqR35oBrYPPBHesYq9J2Z7PKp2bkB\nrZ57JnMCKOB6Gzq4HjU9hW7JaUr7E4QY/PQI/iRiNQKBgFkPAcjVeS9Dfe+Ilpks\nxMfcFF7cKlwTsuMR4ngOJz7fzz3GztJmrELicBwL75/eQBwetV2XAg5mFvLUq4OR\ndto53iZF6RkJlcCLrnomJWjIW7kWTtCXMT6zmX0b6GgOSNU+5+aGWGaRZwc4Qm79\nJhnENgVMlHf6dnZAqVMmCCXT\n-----END PRIVATE KEY-----\n",
+  "client_email": "alexandre-deuxieme-version@accordeur-disruptif.iam.gserviceaccount.com",
+  "client_id": "107209802388344958231",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alexandre-deuxieme-version%40accordeur-disruptif.iam.gserviceaccount.com"
+}
