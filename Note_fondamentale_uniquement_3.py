@@ -2,7 +2,6 @@ import argparse
 import time
 import wave,struct
 import threading
-import scipy.io.wavfile as wave
 import math
 from numpy.fft import fft
 import argparse
