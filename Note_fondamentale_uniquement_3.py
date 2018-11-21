@@ -23,8 +23,8 @@ def determine_note_fondamentale():
 
         fs = 44100
         duration = 2 # seconds
-        myrecording = rec(int(duration * fs), samplerate=fs, channels=2)
-        wait()
+        myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
+        sounddevice.wait()
         wave.write("recording.wav",fs,myrecording)
 
         def readwave(filename):
