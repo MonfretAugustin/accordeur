@@ -3,7 +3,7 @@ import time
 import wave,struct
 import threading
 import math
-from numpy.fft import fft, fftfreq
+from numpy.fft import fft, rfftfreq
 import argparse
 import sounddevice
 from itertools import chain
@@ -57,8 +57,8 @@ def determine_note_fondamentale():
         stop = int((0+1)*rate)
         spectre = fft(data[start:stop])
         n = spectre.size
-        timestep = 0.1
-        freq = fftfreq(n, d=timestep)
+        timestep = 1/60000
+        freq = rfftfreq(n, d=timestep)
 	
 
         print(freq)
