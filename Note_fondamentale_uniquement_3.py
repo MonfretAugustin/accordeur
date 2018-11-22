@@ -11,6 +11,8 @@ from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 from aiy.board import Board, Led
 from aiy.voice.audio import AudioFormat, play_wav, record_file, Recorder
 
+
+
 def determine_note_fondamentale():
     parser = argparse.ArgumentParser()
     parser.add_argument('--filename', '-f', default='recording.wav')
@@ -18,6 +20,8 @@ def determine_note_fondamentale():
 
     with Board() as board:
         print('Press button to start recording.')
+
+
         board.led.state = Led.ON
         board.button.wait_for_press()
         done = threading.Event()

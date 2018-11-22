@@ -3,6 +3,10 @@ import math
 import time
 from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 from aiy.voice import tts           ## à voir si ça s'importe de la sorte
+from aiy.pins import PIN_D
+from gpiozero import Button
+import sys
+
 
 Liste_frequences=[(1,329.6,"mi aigu"),(2,246.9,"si"),(3,196,"sol"),(4,146.8,"ré"),(5,110,"la"),(6,82.4,"mi grave")]  # Liste telle que [(numéro de la corde, fréquence associée en Hz)]  numéro 1 = plus fine, 6 plus grosse
 
@@ -89,7 +93,12 @@ def test_justesse(ecart,f_ref):
 def accord_de_la_guitare():
     tts.say("commencer à accorder la guitare", lang='fr-FR')
     print("commencer à accorder la guitare")
-    for k in range (6):
+    while True:
+        tts.say("appuyer sur le button pour arrêter", lang='fr-FR')
+        button = Button(PIN_D)
+        button.when_pressed = arret()
+        time.sleep(5)
+        button = None
 
         accord_de_la_corde()
         tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
@@ -97,6 +106,8 @@ def accord_de_la_guitare():
     print('Guitare accordée')
     tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
 
+def arret():
+    sys.exit(1)
 
 if __name__=="__main__":
     accord_de_la_guitare()
