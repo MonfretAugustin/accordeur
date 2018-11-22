@@ -93,9 +93,10 @@ def accord_de_la_guitare():
         print("commencer à accorder la guitare")
         while True:
             accord_de_la_corde()
+            button = Button(PIN_D)
             button.when_released = None
             tts.say("appuyer sur le bouton pour arrêter sinon le programme continue", lang='fr-FR')
-            button = Button(PIN_D)
+            
             board.led.state = Led.ON
             button.when_released = arret
                 
