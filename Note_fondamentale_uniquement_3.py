@@ -66,7 +66,7 @@ def determine_note_fondamentale():
             n = len(spectre2)
             freq.append(1.0/n*rate*maxi)
             for j in range(maxi-60,maxi+60):
-                spectre2.pop(j)
+                spectre2[j]=0
 
         print(freq)
         return(freq[1])
