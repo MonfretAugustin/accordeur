@@ -28,7 +28,7 @@ def determine_note_fondamentale():
         sounddevice.wait()
         print("done recording")
         myrecording2 = list(chain(*myrecording))*10
-        print(myrecording2)
+        
 
         """def readwave(filename):
             wav = wave.open(filename)
