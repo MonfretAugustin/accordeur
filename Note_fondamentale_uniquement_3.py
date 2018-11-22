@@ -8,7 +8,7 @@ import argparse
 import sounddevice
 from itertools import chain
 from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
-from aiy.board import Board
+from aiy.board import Board, Led
 from aiy.voice.audio import AudioFormat, play_wav, record_file, Recorder
 
 def determine_note_fondamentale():
