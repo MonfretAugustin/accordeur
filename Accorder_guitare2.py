@@ -18,13 +18,16 @@ def trouve_freq_souhaitee(frequence):     # trouve la fréquence à obtenir (la 
         ecart_prec = Liste_frequences[k-1][1] - frequence
         ecart_suiv = frequence - Liste_frequences[k][1]
         if ecart_prec < ecart_suiv :
+            print("la corde choisie est: ",Liste_frequences[k-1][0])
             return Liste_frequences[k-1]
         else:
+            print("la corde choisie est : ",Liste_frequences[k][0])
             return Liste_frequences[k]
 
 def ecart_avec_objectif(frequence):    # renvoie l'écart sous la forme (valeur de l'écart, -1 ou 1)  -1 pour diminuer, 1 pour augmenter
     objectif = trouve_freq_souhaitee(frequence)
     ecart = frequence - objectif[1]
+    print("l'écart actuelle est de : ", ecart)
     if ecart == abs(ecart):
         action = -1
     else :
