@@ -22,7 +22,7 @@ def determine_note_fondamentale():
         print('Press button to start recording.')
 
 
-        board.led.state = Led.GREEN
+        board.led.state = Led.ON
         board.button.wait_for_press()
         done = threading.Event()
         board.button.when_pressed = done.set
