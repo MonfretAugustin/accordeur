@@ -69,7 +69,7 @@ def determine_note_fondamentale():
                 spectre2[j]=0
 
         print(freq)
-        return(freq[1])
+        return(2*freq[0])
 
 if __name__=='__main__':
     determine_note_fondamentale()
