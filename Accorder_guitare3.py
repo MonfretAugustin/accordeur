@@ -94,13 +94,14 @@ def accord_de_la_guitare():
     tts.say("commencer à accorder la guitare", lang='fr-FR')
     print("commencer à accorder la guitare")
     while True:
+        accord_de_la_corde()
         tts.say("appuyer sur le button pour arrêter", lang='fr-FR')
         button = Button(PIN_D)
-        button.when_pressed = arret()
+        button.when_pressed = arret
         time.sleep(5)
         button = None
 
-        accord_de_la_corde()
+        
         tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
         print ('Accorder la corde suivante')
     print('Guitare accordée')
