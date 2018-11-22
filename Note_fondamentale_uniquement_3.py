@@ -18,12 +18,12 @@ def determine_note_fondamentale():
 
     with Board() as board:
         print('Press button to start recording.')
-        leds.update(Leds.rgb_on(Color.PURPLE))
-        board.led.state = Led.ON
+        Leds.update(Leds.rgb_on(Color.PURPLE))
+        board.led.state = Leds.ON
         board.button.wait_for_press()
         done = threading.Event()
         board.button.when_pressed = done.set
-        board.led.state = Led.OFF
+        board.led.state = Leds.OFF
         fs = 60000
         duration = 2 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
