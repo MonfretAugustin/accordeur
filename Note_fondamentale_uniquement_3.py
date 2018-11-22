@@ -28,7 +28,7 @@ def determine_note_fondamentale():
         sounddevice.wait()
         print("done recording")
         myrecording2 = list(chain(*myrecording)) #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
-        print(myrecording2)
+        
 
         """def readwave(filename):
             wav = wave.open(filename)
