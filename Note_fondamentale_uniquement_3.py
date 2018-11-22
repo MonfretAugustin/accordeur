@@ -48,7 +48,7 @@ def determine_note_fondamentale():
             return (data,framerate)
 
         recording_name = '../AIY-projects-python/src/examples/voice/recording.wav'"""
-        data = myrecording2
+        data = myrecording2*10 #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
 
         rate = fs
 
