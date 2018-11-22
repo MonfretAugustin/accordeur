@@ -5,6 +5,7 @@ from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 from aiy.voice import tts           ## à voir si ça s'importe de la sorte
 from aiy.pins import PIN_D
 from gpiozero import Button
+from aiy.board import Board, Led
 import sys
 
 
@@ -45,11 +46,7 @@ def minimum(tableau):
 
 def ecart_avec_objectif(f_fond,f_ref):    # renvoie l'écart sous la forme (valeur de l'écart, -1 ou 1)  -1 pour diminuer, 1 pour augmenter
     ecart = f_fond - f_ref
-    if ecart == abs(ecart):
-        action = -1
-    else :
-        action = 1
-    return (abs(ecart),action)
+    return ecart
 
 def reponse_bouton(est_juste,ecart):
     with Leds() as leds :
@@ -80,7 +77,7 @@ def accord_de_la_corde () :
         f_fond = Nfu.determine_note_fondamentale()
         f_liste = trouve_freq_souhaitee(f_fond)
         f_ref=f_liste[1]
-        (ecart,action) = ecart_avec_objectif(f_fond,f_ref)
+        ecart = ecart_avec_objectif(f_fond,f_ref)
         print("L'ecart est de : ", abs(ecart))
         est_juste=test_justesse(ecart,f_ref)
         reponse_bouton(est_juste,ecart)
@@ -95,10 +92,12 @@ def accord_de_la_guitare():
     print("commencer à accorder la guitare")
     while True:
         accord_de_la_corde()
-        tts.say("appuyer sur le button pour arrêter", lang='fr-FR')
+        tts.say("appuyer sur le bouton pour arrêter sinon le programme continue", lang='fr-FR')
         button = Button(PIN_D)
         button.when_pressed = arret
+        Board.led.state = Led.ON
         time.sleep(5)
+        Board.led.state = Led.OFF
         button = None
 
         
