@@ -106,7 +106,7 @@ def accord_de_la_guitare():
             
             time.sleep(3)
             board.led.state = Led.OFF
-            button = None
+            
 
         
             tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
