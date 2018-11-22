@@ -42,7 +42,7 @@ def ecart_avec_objectif(f_fond,f_ref):    # renvoie l'écart sous la forme (vale
     ecart_3=f_fond - f_ref/3
     tableau_ecart_abs=[abs(ecart1_2),abs(ecart_1),abs(ecart_2),abs(ecart_3)]
     tableau_ecart=[ecart1_2,ecart_1,ecart_2,ecart_3]
-    min_,k_min=minimum(tableau)
+    min_,k_min=minimum(tableau_ecart_abs)
     return tableau_ecart[k_min]
 
 def reponse_bouton(est_juste,ecart):
