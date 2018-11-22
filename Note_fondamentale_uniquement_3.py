@@ -59,7 +59,7 @@ def determine_note_fondamentale():
         spectre = spectre/spectre.max()                    #Normalise le spectre par rapport à la fondamentale
         spectre2 = list(chain(spectre))                    #Transforme l'array en liste
         freq = []
-		n=len(spectre2)
+        n=len(spectre2)
         spectre2 = spectre2[0:20000]		#On coupe les fréquences supérieurs à 20000
         for _ in range(3):
 
