@@ -11,8 +11,10 @@ def trouve_freq_souhaitee(frequence):     # trouve la fréquence à obtenir (la 
     while k < 6 and frequence < Liste_frequences[k][1] :   # Parcourt liste afin de trouver la fréquence la plus proche
         k+=1
     if k==0:
+        print("la corde choisie est: ",Liste_frequences[0][0])
         return Liste_frequences[0]
     elif k==6:
+        print("la corde choisie est : ",Liste_frequences[5][0])
         return Liste_frequences[5]
     else:
         ecart_prec = Liste_frequences[k-1][1] - frequence
@@ -27,7 +29,6 @@ def trouve_freq_souhaitee(frequence):     # trouve la fréquence à obtenir (la 
 def ecart_avec_objectif(frequence):    # renvoie l'écart sous la forme (valeur de l'écart, -1 ou 1)  -1 pour diminuer, 1 pour augmenter
     objectif = trouve_freq_souhaitee(frequence)
     ecart = frequence - objectif[1]
-    print("l'écart actuelle est de : ", ecart)
     if ecart == abs(ecart):
         action = -1
     else :
@@ -59,6 +60,7 @@ def accord_de_la_corde () :
     while est_juste==False:
         frequence_fondamentale = Nfu.determine_note_fondamentale()
         (ecart,action) = ecart_avec_objectif(frequence_fondamentale)
+        print("L'ecart est de : ", ecart)
         est_juste=test_justesse(frequence_fondamentale)
         reponse_bouton(est_juste,ecart,action)
 
@@ -67,7 +69,7 @@ def test_justesse(frequence_fondamentale):
         f_reference=trouve_freq_souhaitee(frequence_fondamentale)[1]
         (ecart,action) = ecart_avec_objectif(frequence_fondamentale)
         rapport=(f_reference+ecart)/f_reference
-        return (rapport<10**0.05-1)
+        return (rapport<10**0.05)
     
 def accord_de_la_guitare():
     for k in range (6):
