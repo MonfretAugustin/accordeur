@@ -88,4 +88,4 @@ def accord_de_la_guitare():
     print('Guitare accordée')
     tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
 if __name__=="__main__":
-    accord_de_la_corde(5)
+    accord_de_la_corde(0)
