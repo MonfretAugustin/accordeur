@@ -27,8 +27,8 @@ def determine_note_fondamentale():
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
         print("done recording")
-        myrecording2 = list(chain(*myrecording))
-        
+        myrecording2 = list(chain(*myrecording)) #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
+        print(myrecording2)
 
         """def readwave(filename):
             wav = wave.open(filename)
@@ -48,7 +48,7 @@ def determine_note_fondamentale():
             return (data,framerate)
 
         recording_name = '../AIY-projects-python/src/examples/voice/recording.wav'"""
-        data = myrecording2*10 #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
+        data = myrecording2
 
         rate = fs
 
