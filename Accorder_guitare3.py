@@ -87,7 +87,7 @@ def accord_de_la_guitare():
     for k in range (6):
 
         tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
-        accord_de_la_corde(k)
+        accord_de_la_corde()
         print ('Accorder la corde suivante')
     print('Guitare accordée')
     tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
