@@ -88,25 +88,22 @@ def test_justesse(ecart,f_ref):
         return (rapport<1.02)
     
 def accord_de_la_guitare():
-    tts.say("commencer à accorder la guitare", lang='fr-FR')
-    print("commencer à accorder la guitare")
-    while True:
-        accord_de_la_corde()
-        tts.say("appuyer sur le bouton pour arrêter sinon le programme continue", lang='fr-FR')
-        
-        with Board() as board:
+    with Board() as board:
+        tts.say("commencer à accorder la guitare", lang='fr-FR')
+        print("commencer à accorder la guitare")
+        while True:
+            accord_de_la_corde()
+            tts.say("appuyer sur le bouton pour arrêter sinon le programme continue", lang='fr-FR')
             button = Button(PIN_D)
             button.when_pressed = arret
             board.led.state = Led.ON
             time.sleep(3)
             board.led.state = Led.OFF
-        button = None
+            button = None
 
         
-        tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
-        print ('Accorder la corde suivante')
-    print('Guitare accordée')
-    tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
+            tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
+            print ('Accorder la corde suivante')
 
 def arret():
     sys.exit(1)
