@@ -61,7 +61,7 @@ def determine_note_fondamentale():
         freq = []
         n=len(spectre2)
         spectre2 = spectre2[0:20000]		#On coupe les fréquences supérieurs à 20000
-        for _ in range(3):
+        for _ in range(6):
 
             maxi = spectre2.index(max(spectre2))                #Trouve l'indice de la fréquence max (fondamentale)
             freq.append(1.0/n*rate*maxi)
