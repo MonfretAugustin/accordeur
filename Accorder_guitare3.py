@@ -95,9 +95,10 @@ def accord_de_la_guitare():
         tts.say("appuyer sur le bouton pour arrêter sinon le programme continue", lang='fr-FR')
         button = Button(PIN_D)
         button.when_pressed = arret
-        Board.led.state = Led.ON
-        time.sleep(5)
-        Board.led.state = Led.OFF
+        with Board() as board:
+            board.led.state = Led.ON
+            time.sleep(5)
+            board.led.state = Led.OFF
         button = None
 
         
