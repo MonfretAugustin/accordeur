@@ -30,7 +30,7 @@ def minimum(tableau):
         min_=tableau[0]
         k_min=0
         for k in range(len(tableau)):
-            if x<=min_:
+            if tableau[k]<=min_:
                 min_=tableau[k]
                 k_min=k
         return min_,k_min
