@@ -97,7 +97,7 @@ def accord_de_la_guitare():
         button.when_pressed = arret
         with Board() as board:
             board.led.state = Led.ON
-            time.sleep(5)
+            time.sleep(3)
             board.led.state = Led.OFF
         button = None
 
