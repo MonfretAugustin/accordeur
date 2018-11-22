@@ -7,7 +7,7 @@ from numpy.fft import fft
 import argparse
 import sounddevice
 from itertools import chain
-
+from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 from aiy.board import Board
 from aiy.voice.audio import AudioFormat, play_wav, record_file, Recorder
 
@@ -19,15 +19,17 @@ def determine_note_fondamentale():
     with Board() as board:
         print('Press button to start recording.')
         board.button.wait_for_press()
+        leds.update(Leds.rgb_pattern(Color.PURPLE))
+        board.led.state = Led.ON
         done = threading.Event()
         board.button.when_pressed = done.set
-
+        board.led.state = Led.OFF
         fs = 60000
-        duration = 1 # seconds
+        duration = 2 # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
         print("done recording")
-        myrecording2 = list(chain(*myrecording))*5 #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
+        myrecording2 = list(chain(*myrecording)) #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
         
 
         """def readwave(filename):
@@ -61,7 +63,7 @@ def determine_note_fondamentale():
         freq = []
         n=len(spectre2)
         spectre2 = spectre2[0:20000]		#On coupe les fréquences supérieurs à 20000
-        for _ in range(6):
+        for _ in range(3):
 
             maxi = spectre2.index(max(spectre2))                #Trouve l'indice de la fréquence max (fondamentale)
             freq.append(1.0/n*rate*maxi)
@@ -69,7 +71,7 @@ def determine_note_fondamentale():
                 spectre2[j]=0
 
         print(freq)
-        return(2*freq[0])
+        return(freq[1])
 
 if __name__=='__main__':
     determine_note_fondamentale()

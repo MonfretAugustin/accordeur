@@ -40,14 +40,12 @@ def minimum(tableau):
         return min_,k_min
 
 def ecart_avec_objectif(f_fond,f_ref):    # renvoie l'écart sous la forme (valeur de l'écart, -1 ou 1)  -1 pour diminuer, 1 pour augmenter
-    ecart1_2=f_fond - f_ref*2
-    ecart_1=f_fond - f_ref
-    ecart_2=f_fond - f_ref/2
-    ecart_3=f_fond - f_ref/3
-    tableau_ecart_abs=[abs(ecart1_2),abs(ecart_1),abs(ecart_2),abs(ecart_3)]
-    tableau_ecart=[ecart1_2,ecart_1,ecart_2,ecart_3]
-    min_,k_min=minimum(tableau_ecart_abs)
-    return tableau_ecart[k_min]
+    ecart = f_fond - f_ref
+    if ecart == abs(ecart):
+        action = -1
+    else :
+        action = 1
+    return (abs(ecart),action)
 
 def reponse_bouton(est_juste,ecart):
     with Leds() as leds :
@@ -78,7 +76,7 @@ def accord_de_la_corde () :
         f_fond = Nfu.determine_note_fondamentale()
         f_liste = trouve_freq_souhaitee(f_fond)
         f_ref=f_liste[1]
-        ecart= ecart_avec_objectif(f_fond,f_ref)
+        (ecart,action) = ecart_avec_objectif(f_fond,f_ref)
         print("L'ecart est de : ", abs(ecart))
         est_juste=test_justesse(ecart,f_ref)
         reponse_bouton(est_juste,ecart)
