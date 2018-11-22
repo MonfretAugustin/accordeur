@@ -55,18 +55,14 @@ def determine_note_fondamentale():
 
         start = int(0*rate)
         stop = int((0+1)*rate)
-        spectre = abs(fft(data[start:stop]))       #Réalise le spectre
-        spectre = spectre/spectre.max()                    #Normalise le spectre par rapport à la fondamentale
-        spectre2 = list(chain(spectre))                    #Transforme l'array en liste
-        maxi = spectre2.index(max(spectre))                #Trouve l'indice de la fréquence max (fondamentale)
-
+        spectre = fft.fft(data[start:stop])    
         n = spectre.size
-        freq = []
-        for k in range(n):
-            freq.append(1.0/n*rate*k)
+	timestep = 0.1
+	freq = np.fft.fftfreq(n, d=timestep)
+	
 
-        print(freq[maxi])
-        return(freq[maxi])
+        print(freq[1])
+        return(freq[1])
 
 if __name__=='__main__':
     determine_note_fondamentale()
