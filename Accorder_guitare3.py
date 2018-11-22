@@ -65,11 +65,12 @@ def reponse_bouton(est_juste,ecart):
                 time.sleep(5)
 
 
-def accord_de_la_corde (k) :
+def accord_de_la_corde () :
     est_juste=False
     while est_juste==False:
         f_fond = Nfu.determine_note_fondamentale()
-        f_ref=Liste_frequences[k][1]
+        f_liste = trouve_freq_souhaitee(f_fond)
+        f_ref=f_liste[1]
         ecart= ecart_avec_objectif(f_fond,f_ref)
         print("L'ecart est de : ", abs(ecart))
         est_juste=test_justesse(ecart,f_ref)
@@ -81,11 +82,16 @@ def test_justesse(ecart,f_ref):
         return (rapport<1.02)
     
 def accord_de_la_guitare():
+    tts.say("commencer à accorder la guitare", lang='fr-FR')
+    print("commencer à accorder la guitare")
     for k in range (6):
-        print ('Accorder la corde suivante')
+
         tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
         accord_de_la_corde(k)
+        print ('Accorder la corde suivante')
     print('Guitare accordée')
     tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
+
+
 if __name__=="__main__":
-    accord_de_la_corde(0)
+    accord_de_la_guitare()
