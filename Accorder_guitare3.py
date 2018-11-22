@@ -4,25 +4,29 @@ import time
 from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 from aiy.voice import tts           ## à voir si ça s'importe de la sorte
 
-Liste_frequences=[(1,329.6),(2,246.9),(3,196),(4,146.8),(5,110),(6,82.4)]  # Liste telle que [(numéro de la corde, fréquence associée en Hz)]  numéro 1 = plus fine, 6 plus grosse
+Liste_frequences=[(1,329.6,"mi aigu"),(2,246.9,"si"),(3,196,"sol"),(4,146.8,"ré"),(5,110,"la"),(6,82.4,"mi grave")]  # Liste telle que [(numéro de la corde, fréquence associée en Hz)]  numéro 1 = plus fine, 6 plus grosse
 
 def trouve_freq_souhaitee(frequence):     # trouve la fréquence à obtenir (la plus proche de celle jouée)
     k=0
     while k < 6 and frequence < Liste_frequences[k][1] :   # Parcourt liste afin de trouver la fréquence la plus proche
         k+=1
     if k==0:
+        tts.say('La corde détectée est {}'.format(Liste_frequences[0][2]), lang='fr-FR')
         print("la corde choisie est: ",Liste_frequences[0][0])
         return Liste_frequences[0]
     elif k==6:
+        tts.say('La corde détectée est {}'.format(Liste_frequences[5][2]), lang='fr-FR')
         print("la corde choisie est : ",Liste_frequences[5][0])
         return Liste_frequences[5]
     else:
         ecart_prec = Liste_frequences[k-1][1] - frequence
         ecart_suiv = frequence - Liste_frequences[k][1]
         if ecart_prec < ecart_suiv :
+            tts.say('La corde détectée est {}'.format(Liste_frequences[k-1][2]), lang='fr-FR')
             print("la corde choisie est: ",Liste_frequences[k-1][0])
             return Liste_frequences[k-1]
         else:
+            tts.say('La corde détectée est {}'.format(Liste_frequences[k][2]), lang='fr-FR')
             print("la corde choisie est : ",Liste_frequences[k][0])
             return Liste_frequences[k]
 
@@ -55,12 +59,15 @@ def reponse_bouton(est_juste,ecart):
         else :
             period = 10*abs(ecart)
             leds.pattern=Pattern.blink(period)          # donne fréquence de pulsation
-            print('Tourner la cheville')
-            tts.say('Tourner la cheville', lang='fr-FR')       ####### Dire la phrase #######
+            print("TOURNER LA CHEVILLE")
+                 ####### Dire la phrase #######
             if ecart>0 :
+                tts.say('Tendre la corde', lang='fr-FR')
                 leds.update(Leds.rgb_pattern(Color.BLUE))       #Clignotement bleu pour augmenter pendant 5 secondes
                 time.sleep(5)
+
             else :
+                tts.say('Détendre la corde', lang='fr-FR')
                 leds.update(Leds.rgb_pattern(Color.RED))        #Clignotement rouge pour diminuer pendant 5 secondes
                 time.sleep(5)
 
@@ -86,8 +93,8 @@ def accord_de_la_guitare():
     print("commencer à accorder la guitare")
     for k in range (6):
 
-        tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
         accord_de_la_corde()
+        tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
         print ('Accorder la corde suivante')
     print('Guitare accordée')
     tts.say('Guitare accordée',lang='fr-FR')                ####### Idem #######
