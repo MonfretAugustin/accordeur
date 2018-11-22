@@ -28,7 +28,7 @@ def determine_note_fondamentale():
         sounddevice.wait()
         print("done recording")
         myrecording2 = list(chain(*myrecording)) #On augmente de façon virtuel la durée du signal pour augmenter la précision de la fft
-        print(myrecording2)
+        
 
         """def readwave(filename):
             wav = wave.open(filename)
@@ -59,12 +59,13 @@ def determine_note_fondamentale():
         spectre = spectre/spectre.max()                    #Normalise le spectre par rapport à la fondamentale
         spectre2 = list(chain(spectre))                    #Transforme l'array en liste
         freq = []
+	spectre2 = spectre2[0:20000]		#On coupe les fréquences supérieurs à 20000
         for _ in range(3):
 
             maxi = spectre2.index(max(spectre2))                #Trouve l'indice de la fréquence max (fondamentale)
             n = len(spectre2)
             freq.append(1.0/n*rate*maxi)
-            spectre2.pop(maxi)
+            spectre2.pop(maxi-60:maxi+60)
 
         print(freq)
         return(freq[1])
