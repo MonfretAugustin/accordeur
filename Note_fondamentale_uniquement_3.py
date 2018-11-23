@@ -56,7 +56,8 @@ def determine_note_fondamentale():
         data = myrecording2
         rate = fs
 
-        freq_max(data,rate)
+        return freq_max(data,rate)
+           
 
 if __name__=='__main__':
     determine_note_fondamentale()
