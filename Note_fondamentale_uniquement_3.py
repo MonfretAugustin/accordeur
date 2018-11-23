@@ -51,7 +51,7 @@ def determine_note_fondamentale():
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
         print("done recording")
-        myrecording2 = list(chain(*myrecording))        # On augmente de façon virtuelle la durée du signal pour augmenter la précision de la fft
+        myrecording2 = list(chain(*myrecording))*2        # On augmente de façon virtuelle la durée du signal pour augmenter la précision de la fft
 
         data = myrecording2
         rate = fs
