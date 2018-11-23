@@ -91,7 +91,7 @@ def accord_de_la_guitare():     ### Réalise l'accord de toutes les cordes de la
         tts.say("commencer à accorder la guitare", lang='fr-FR')
         print("commencer à accorder la guitare")
         """button = Button(PIN_D)"""
-        while :
+        while True:
             accord_de_la_corde()
             
             """tts.say("appuyer sur le bouton", lang='fr-FR')
