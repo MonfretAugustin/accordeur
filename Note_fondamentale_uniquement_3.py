@@ -47,7 +47,7 @@ def determine_note_fondamentale():
         board.button.when_pressed = done.set
         board.led.state = Led.OFF           ### eteindre lorsque bouton appuyé
         fs = 60000
-        duration = 2        # seconds
+        duration = 1       # seconds
         myrecording = sounddevice.rec(int(duration * fs), samplerate=fs, channels=2)
         sounddevice.wait()
         print("done recording")
