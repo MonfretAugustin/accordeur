@@ -28,3 +28,13 @@ test_ecart_obj()
 
 ### reponse_bouton peut-on faire un test ? ###
 
+### accord de la corde pareil ###
+
+def test_test_justesse():
+    assert test_justesse(0.2,329.6)==True
+    assert test_justesse(10,329.6)==False
+    assert ...                              ### à compléter
+
+test_test_justesse()
+
+###accord de la guitare idem ###
