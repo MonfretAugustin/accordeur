@@ -10,12 +10,12 @@ def test_freq_max():
     assert freq_max('Data/Mi aigu.mp3',rate)>=327 and freq_max('Data/Mi aigu.mp3',rate)<=331
 
 def test_trouve_freq_souhaitee():
-    assert trouve_freq_souhaitee(429.7)==(1,329.6)
-    assert trouve_freq_souhaitee(329.6)==(1,329.6)
-    assert trouve_freq_souhaitee(280.0)==(2,246.9)
-    assert trouve_freq_souhaitee(246.9)==(2,246.9)
-    assert trouve_freq_souhaitee(190)==(3,196)
-    assert trouve_freq_souhaitee(73.0)==(6,82.4)
+    assert trouve_freq_souhaitee(429.7)==(1,329.6,"mi aigu")
+    assert trouve_freq_souhaitee(329.6)==(1,329.6,"mi aigu")
+    assert trouve_freq_souhaitee(280.0)==(2,246.9,"si")
+    assert trouve_freq_souhaitee(246.9)==(2,246.9,"si")
+    assert trouve_freq_souhaitee(190)==(3,196,"sol")
+    assert trouve_freq_souhaitee(73.0)==(6,82.4,"mi grave")
 
 test_trouve_freq_souhaitee()
 
