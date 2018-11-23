@@ -90,32 +90,15 @@ def accord_de_la_guitare():     ### Réalise l'accord de toutes les cordes de la
     with Board() as board:
         tts.say("commencer à accorder la guitare", lang='fr-FR')
         print("commencer à accorder la guitare")
-        """button = Button(PIN_D)"""
-        while True:
-            accord_de_la_corde()
-            
-            """tts.say("appuyer sur le bouton", lang='fr-FR')
-            button.when_released = continuer
-            time.sleep(3)
-            tts.say("appuyer sur le bouton pour arrêter sinon le programme continue", lang='fr-FR')
-            
-            board.led.state = Led.ON
-            button.when_pressed = arret
-                
-            
-            time.sleep(3)
-            board.led.state = Led.OFF"""
-            
-
         
+        for i in range(6):
+            accord_de_la_corde()
             tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
             print ('Accorder la corde suivante')
+            
+        tts.say("la guitare est accordé", lang='fr-FR')
+        print("la guitare est accordé")
 
-def arret():
-    sys.exit(1)
-    
-def continuer():
-    return None
 
 if __name__=="__main__":
     accord_de_la_guitare()
