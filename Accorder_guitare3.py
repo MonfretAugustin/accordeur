@@ -91,11 +91,12 @@ def accord_de_la_guitare():     ### Réalise l'accord de toutes les cordes de la
         tts.say("commencer à accorder la guitare", lang='fr-FR')
         print("commencer à accorder la guitare")
         
-        for i in range(6):
+        for i in range(5):
             accord_de_la_corde()
             tts.say('Accorder la corde suivante', lang='fr-FR')####### De même, phrase à dire #######
             print ('Accorder la corde suivante')
-            
+        
+        accord_de_la_corde()
         tts.say("la guitare est accordé", lang='fr-FR')
         print("la guitare est accordé")
 
