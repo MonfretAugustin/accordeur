@@ -1,7 +1,9 @@
 from Note_fondamentale_uniquement_3 import *
 from Accorder_guitare3 import *
 
-### Comment faire des tests pour Nfu3 ?? ###
+### Pour Note_fondamentale_3 on ne teste que la fonction freq_max, le reste étant uniquement une écoute du respaberry
+def test_freq_max():
+    assert
 
 def test_trouve_freq_souhaitee():
     assert trouve_freq_souhaitee(429.7)==(1,329.6)
@@ -23,6 +25,7 @@ test_minimum()
 def test_ecart_obj():
     assert ecart_avec_objectif(329.6,324.0)>=5.5 and ecart_avec_objectif(329.6,324.0)<=5.7
     assert ecart_avec_objectif(246.9,250)>=-3.2 and ecart_avec_objectif(246.9,250)<= -3.0
+    assert ecart_avec_objectif(185.4,196)>=
 
 test_ecart_obj()
 
